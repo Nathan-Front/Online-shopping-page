@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+   
+    <title>Document</title>
+</head>
+<body>
+    <div class="title-cart-panel">
+        <h1>Online shopping 101</h1>
+        <div class="item-to-cart-checkout">
+            <button id="check-out-cart"></button>
+            <span id="added-to-cart" class="cart-checkout-qty">0</span>
+        </div>
+    </div>
+    <div class="category-panel">
+            <ul class="category-button-panel">
+                <li><button class="category-button">▼Categories</button></li>
+                <li class="drop-buttons">
+                    <div><button>Clothes</button></div>
+                    <div><button>Shoes</button></div>
+                    <div><button>Bags</button></div>
+                    <div><button>Accessories</button></div>
+                </li>
+            </ul>
+            <ul class="filter-panel">
+                <li>
+                    <button id="filter-button">Filter</button>
+                </li>
+                <li>
+                    <label for=""><input name="filter-category" value="Men" data-option="Men"  type="checkbox">
+                    Men</label>
+                </li>
+                <li>
+                    <label for=""><input name="filter-category" value="Women" data-option="Women" type="checkbox">
+                    Women</label>
+                </li>
+                <li>
+                    <label for="">
+                    <input name="filter-category" value="Winter" data-option="Winter" type="checkbox">
+                    Winter</label>
+                </li>
+                <li>
+                    <label for="">
+                    <input name="filter-category" value="Spring" data-option="Spring" type="checkbox">
+                    Spring</label>
+                </li>
+                <li>
+                    <label for="">
+                    <input name="filter-category" value="Summer" data-option="Summer" type="checkbox">
+                    Summer</label>
+                </li>
+                <li>
+                    <label for="">
+                    <input name="filter-category" value="Fall" data-option="Fall" type="checkbox">
+                    Fall</label>
+                </li>
+            </ul>
+    </div>
+    <div class="main-panel">
+        <div class="item-panel">
+            <div class="clothe-panel owl-carousel-container">
+                <h2 class="item-title-category">Clothes</h2>
+                <button class="carousel-button left">
+                <i id="left" class="fas fa-chevron-left"></i>
+                </button>
+                <ul class="clothing owl-carousel" id="clothing-container">
+                    <li class="list-of-items carousel-item" data-product-id="1" data-image-src="images/clothe/casual_men.jpg" data-filter-opt1="Men" data-filter-opt2="Fall">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-1">M-jacket</span></p>
+                        <p>Item price ($)<span id="item-price-1">9.75</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/casual_men.jpg" alt="M-jacket">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss">
+                            <input name="select-size-1" value="SS" id="size-ss" type="radio" checked>
+                            <span class="select-size" for="size-ss">SS</span>
+                        </label>
+                        <label for="size-s">
+                            <input name="select-size-1" value="S" id="size-s" type="radio">
+                            <span class="select-size" for="size-s">S</span>
+                        </label>
+                        <label for="size-m">
+                            <input name="select-size-1" value="M" id="size-m" type="radio">
+                            <span class="select-size" for="size-m">M</span>
+                        </label>
+                        <label for="size-l">
+                            <input name="select-size-1" value="L" id="size-l" type="radio">
+                            <span class="select-size" for="size-l">L</span>
+                        </label>
+                        <label for="size-ll">
+                            <input name="select-size-1" value="2L" id="size-ll" type="radio">
+                            <span class="select-size" for="size-ll">2L</span>
+                        </label>
+                        <label for="size-lll">
+                            <input name="select-size-1" value="3L" id="size-lll" type="radio">
+                            <span class="select-size" for="size-lll">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('M-jacket', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-1">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+                    
+                    <li class="list-of-items carousel-item" data-product-id="2" data-image-src="images/clothe/casual_women.jpg" data-filter-opt1="Women" data-filter-opt2="Spring">
+                       <div class="item-descript">
+                        <p>Item name:<span class="product-name-2">W-jacket</span></p>
+                        <p>Item price ($)<span id="item-price-2">10.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/casual_women.jpg" alt="W-jacket">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-2">
+                            <input name="select-size-2" value="SS" id="size-ss-2" type="radio" checked>
+                            <span class="select-size" for="size-ss-2">SS</span>
+                        </label>
+                        <label for="size-s-2">
+                            <input name="select-size-2" value="S" id="size-s-2" type="radio">
+                            <span class="select-size" for="size-s-2">S</span>
+                        </label>
+                        <label for="size-m-2">
+                            <input name="select-size-2" value="M" id="size-m-2" type="radio">
+                            <span class="select-size" for="size-m-2">M</span>
+                        </label>
+                        <label for="size-l-2">
+                            <input name="select-size-2" value="L" id="size-l-2" type="radio">
+                            <span class="select-size" for="size-l-2">L</span>
+                        </label>
+                        <label for="size-ll-2">
+                            <input name="select-size-2" value="2L" id="size-ll-2" type="radio">
+                            <span class="select-size" for="size-ll-2">2L</span>
+                        </label>
+                        <label for="size-lll-2">
+                            <input name="select-size-2" value="3L" id="size-lll-2" type="radio">
+                            <span class="select-size" for="size-lll-2">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('W-jacket', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-2">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-2" class="checkout-button">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item" data-product-id="3" data-image-src="images/clothe/jacket_men_2.png" data-filter-opt1="Men" data-filter-opt2="Winter">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-3">K-jacket</span></p>
+                        <p>Item price ($)<span id="item-price-3">20.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/jacket_men_2.png" alt="K-jacket">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-3">
+                            <input name="select-size-3" value="SS" id="size-ss-3" type="radio" checked>
+                            <span class="select-size" for="size-ss-3">SS</span>
+                        </label>
+                        <label for="size-s-3">
+                            <input name="select-size-3" value="S" id="size-s-3" type="radio">
+                            <span class="select-size" for="size-s-3">S</span>
+                        </label>
+                        <label for="size-m-3">
+                            <input name="select-size-3" value="M" id="size-m-3" type="radio">
+                            <span class="select-size" for="size-m-3">M</span>
+                        </label>
+                        <label for="size-l-3">
+                            <input name="select-size-3" value="L" id="size-l-3" type="radio">
+                            <span class="select-size" for="size-l-3">L</span>
+                        </label>
+                        <label for="size-ll-3">
+                            <input name="select-size-3" value="2L" id="size-ll-3" type="radio">
+                            <span class="select-size" for="size-ll-3">2L</span>
+                        </label>
+                        <label for="size-lll-3">
+                            <input name="select-size-3" value="3L" id="size-lll-3" type="radio">
+                            <span class="select-size" for="size-lll-3">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('K-jacket', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-3">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-3" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item" data-product-id="4" data-image-src="images/clothe/jacket_men.jpg" data-filter-opt1="Men" data-filter-opt2="Fall">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-4">C-jacket</span></p>
+                        <p>Item price ($)<span id="item-price-4">17.25</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/jacket_men.jpg" alt="C-jacket">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-4">
+                            <input name="select-size-4" value="SS" id="size-ss-4" type="radio" checked>
+                            <span class="select-size" for="size-ss-4">SS</span>
+                        </label>
+                        <label for="size-s-4">
+                            <input name="select-size-4" value="S" id="size-s-4" type="radio">
+                            <span class="select-size" for="size-s-4">S</span>
+                        </label>
+                        <label for="size-m-4">
+                            <input name="select-size-4" value="M" id="size-m-4" type="radio">
+                            <span class="select-size" for="size-m-4">M</span>
+                        </label>
+                        <label for="size-l-4">
+                            <input name="select-size-4" value="L" id="size-l-4" type="radio">
+                            <span class="select-size" for="size-l-4">L</span>
+                        </label>
+                        <label for="size-ll-4">
+                            <input name="select-size-4" value="2L" id="size-ll-4" type="radio">
+                            <span class="select-size" for="size-ll-4">2L</span>
+                        </label>
+                        <label for="size-lll-4">
+                            <input name="select-size-4" value="3L" id="size-lll-4" type="radio">
+                            <span class="select-size" for="size-lll-4">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('C-jacket', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-4">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-4" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    
+                    <li class="list-of-items carousel-item" data-product-id="5" data-image-src="images/clothe/dress.jpg" data-filter-opt1="Women" data-filter-opt2="Summer">
+                       <div class="item-descript">
+                        <p>Item name:<span class="product-name-5">D-dress</span></p>
+                        <p>Item price ($)<span id="item-price-5">7.50</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/dress.jpg" alt="D-dress">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-5">
+                            <input name="select-size-5" value="SS" id="size-ss-5" type="radio" checked>
+                            <span class="select-size" for="size-ss-5">SS</span>
+                        </label>
+                        <label for="size-s-5">
+                            <input name="select-size-5" value="S" id="size-s-5" type="radio">
+                            <span class="select-size" for="size-s-5">S</span>
+                        </label>
+                        <label for="size-m-5">
+                            <input name="select-size-5" value="M" id="size-m-5" type="radio">
+                            <span class="select-size" for="size-m-5">M</span>
+                        </label>
+                        <label for="size-l-5">
+                            <input name="select-size-5" value="L" id="size-l-5" type="radio">
+                            <span class="select-size" for="size-l-5">L</span>
+                        </label>
+                        <label for="size-ll-5">
+                            <input name="select-size-5" value="2L" id="size-ll-5" type="radio">
+                            <span class="select-size" for="size-ll-5">2L</span>
+                        </label>
+                        <label for="size-lll-5">
+                            <input name="select-size-5" value="3L" id="size-lll-5" type="radio">
+                            <span class="select-size" for="size-lll-5">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('D-dress', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-5">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-5" class="checkout-button">Check out</button>
+                        </div>
+                    </li>
+                    
+                    <li class="list-of-items carousel-item" data-product-id="6" data-image-src="images/clothe/summer_m_1.jpg" data-filter-opt1="Men" data-filter-opt2="Summer">
+                       <div class="item-descript">
+                        <p>Item name:<span class="product-name-6">M-shirt</span></p>
+                        <p>Item price ($)<span id="item-price-6">3.25</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/summer_m_1.jpg" alt="M-shirt">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-6">
+                            <input name="select-size-6" value="SS" id="size-ss-6" type="radio" checked>
+                            <span class="select-size" for="size-ss-6">SS</span>
+                        </label>
+                        <label for="size-s-6">
+                            <input name="select-size-6" value="S" id="size-s-6" type="radio">
+                            <span class="select-size" for="size-s-6">S</span>
+                        </label>
+                        <label for="size-m-6">
+                            <input name="select-size-6" value="M" id="size-m-6" type="radio">
+                            <span class="select-size" for="size-m-6">M</span>
+                        </label>
+                        <label for="size-l-6">
+                            <input name="select-size-6" value="L" id="size-l-6" type="radio">
+                            <span class="select-size" for="size-l-6">L</span>
+                        </label>
+                        <label for="size-ll-6">
+                            <input name="select-size-6" value="2L" id="size-ll-6" type="radio">
+                            <span class="select-size" for="size-ll-6">2L</span>
+                        </label>
+                        <label for="size-lll-6">
+                            <input name="select-size-6" value="3L" id="size-lll-6" type="radio">
+                            <span class="select-size" for="size-lll-6">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('M-shirt', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-6">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-6" class="checkout-button">Check out</button>
+                        </div>
+                    </li>
+
+                     <li class="list-of-items carousel-item" data-product-id="7" data-image-src="images/clothe/summer_w_1.jpg" data-filter-opt1="Women" data-filter-opt2="Summer">
+                       <div class="item-descript">
+                        <p>Item name:<span class="product-name-7">W-shirt</span></p>
+                        <p>Item price ($)<span id="item-price-7">4.50</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/summer_w_1.jpg" alt="W-shirt">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-7">
+                            <input name="select-size-7" value="SS" id="size-ss-7" type="radio" checked>
+                            <span class="select-size" for="size-ss-7">SS</span>
+                        </label>
+                        <label for="size-s-7">
+                            <input name="select-size-7" value="S" id="size-s-7" type="radio">
+                            <span class="select-size" for="size-s-7">S</span>
+                        </label>
+                        <label for="size-m-7">
+                            <input name="select-size-7" value="M" id="size-m-7" type="radio">
+                            <span class="select-size" for="size-m-7">M</span>
+                        </label>
+                        <label for="size-l-7">
+                            <input name="select-size-7" value="L" id="size-l-7" type="radio">
+                            <span class="select-size" for="size-l-7">L</span>
+                        </label>
+                        <label for="size-ll-7">
+                            <input name="select-size-7" value="2L" id="size-ll-7" type="radio">
+                            <span class="select-size" for="size-ll-7">2L</span>
+                        </label>
+                        <label for="size-lll-7">
+                            <input name="select-size-7" value="3L" id="size-lll-7" type="radio">
+                            <span class="select-size" for="size-lll-7">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('W-shirt', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-7">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-7" class="checkout-button">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item" data-product-id="8" data-image-src="images/clothe/summer_w_2.jpg" data-filter-opt1="Women" data-filter-opt2="Fall">
+                       <div class="item-descript">
+                        <p>Item name:<span class="product-name-8">W-pants</span></p>
+                        <p>Item price ($)<span id="item-price-8">8.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/summer_w_2.jpg" alt="W-pants">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-8">
+                            <input name="select-size-8" value="SS" id="size-ss-8" type="radio" checked>
+                            <span class="select-size" for="size-ss-8">SS</span>
+                        </label>
+                        <label for="size-s-8">
+                            <input name="select-size-8" value="S" id="size-s-8" type="radio">
+                            <span class="select-size" for="size-s-8">S</span>
+                        </label>
+                        <label for="size-m-8">
+                            <input name="select-size-8" value="M" id="size-m-8" type="radio">
+                            <span class="select-size" for="size-m-8">M</span>
+                        </label>
+                        <label for="size-l-8">
+                            <input name="select-size-8" value="L" id="size-l-8" type="radio">
+                            <span class="select-size" for="size-l-8">L</span>
+                        </label>
+                        <label for="size-ll-8">
+                            <input name="select-size-8" value="2L" id="size-ll-8" type="radio">
+                            <span class="select-size" for="size-ll-8">2L</span>
+                        </label>
+                        <label for="size-lll-8">
+                            <input name="select-size-8" value="3L" id="size-lll-8" type="radio">
+                            <span class="select-size" for="size-lll-8">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('W-pants', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-8">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-8" class="checkout-button">Check out</button>
+                        </div>
+                    </li>
+
+                     <li class="list-of-items carousel-item" data-product-id="9" data-image-src="images/clothe/women_shirt.jpg" data-filter-opt1="Women" data-filter-opt2="Summer">
+                       <div class="item-descript">
+                        <p>Item name:<span class="product-name-9">K-shirt</span></p>
+                        <p>Item price ($)<span id="item-price-9">3.75</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/women_shirt.jpg" alt="K-shirt">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-9">
+                            <input name="select-size-9" value="SS" id="size-ss-9" type="radio" checked>
+                            <span class="select-size" for="size-ss-9">SS</span>
+                        </label>
+                        <label for="size-s-9">
+                            <input name="select-size-9" value="S" id="size-s-9" type="radio">
+                            <span class="select-size" for="size-s-9">S</span>
+                        </label>
+                        <label for="size-m-9">
+                            <input name="select-size-9" value="M" id="size-m-9" type="radio">
+                            <span class="select-size" for="size-m-9">M</span>
+                        </label>
+                        <label for="size-l-9">
+                            <input name="select-size-9" value="L" id="size-l-9" type="radio">
+                            <span class="select-size" for="size-l-9">L</span>
+                        </label>
+                        <label for="size-ll-9">
+                            <input name="select-size-9" value="2L" id="size-ll-9" type="radio">
+                            <span class="select-size" for="size-ll-9">2L</span>
+                        </label>
+                        <label for="size-lll-9">
+                            <input name="select-size-9" value="3L" id="size-lll-9" type="radio">
+                            <span class="select-size" for="size-lll-9">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('K-shirt', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-9">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-9" class="checkout-button">Check out</button>
+                        </div>
+                    </li>
+
+                     <li class="list-of-items carousel-item" data-product-id="10" data-image-src="images/clothe/winter_w_2.jpg" data-filter-opt1="Women" data-filter-opt2="Winter">
+                       <div class="item-descript">
+                        <p>Item name:<span class="product-name-10">W-set</span></p>
+                        <p>Item price ($)<span id="item-price-10">17.85</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/clothe/winter_w_2.jpg" alt="W-set">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-10">
+                            <input name="select-size-10" value="SS" id="size-ss-10" type="radio" checked>
+                            <span class="select-size" for="size-ss-10">SS</span>
+                        </label>
+                        <label for="size-s-10">
+                            <input name="select-size-10" value="S" id="size-s-10" type="radio">
+                            <span class="select-size" for="size-s-10">S</span>
+                        </label>
+                        <label for="size-m-10">
+                            <input name="select-size-10" value="M" id="size-m-10" type="radio">
+                            <span class="select-size" for="size-m-10">M</span>
+                        </label>
+                        <label for="size-l-10">
+                            <input name="select-size-10" value="L" id="size-l-10" type="radio">
+                            <span class="select-size" for="size-l-10">L</span>
+                        </label>
+                        <label for="size-ll-10">
+                            <input name="select-size-10" value="2L" id="size-ll-10" type="radio">
+                            <span class="select-size" for="size-ll-10">2L</span>
+                        </label>
+                        <label for="size-lll-10">
+                            <input name="select-size-10" value="3L" id="size-lll-10" type="radio">
+                            <span class="select-size" for="size-lll-10">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('W-set', this)">Add to cart</button><!---->
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-10">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-10" class="checkout-button">Check out</button>
+                        </div>
+                    </li>  
+                </ul>
+                <button class="carousel-button right">
+                <i id="right" class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="clothe-panel owl-carousel-container-shoes">
+                <h2>Shoes</h2>
+                <button class="carousel-button left-shoes">
+                <i id="left-Shoes" class="fas fa-chevron-left"></i>
+                </button>
+                <ul class="clothing owl-carousel-shoes" id="clothing-container-shoes">
+                    <li class="list-of-items carousel-item-shoes" data-product-id="11" data-image-src="images/Shoes/shoe1.jpg" data-filter-opt1="Men" data-filter-opt2="Fall">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-11">W-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-11">49.99</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/shoe1.jpg" alt="W-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoes">
+                            <input name="select-size-11" value="SS" id="size-ss-shoes" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes">SS</span>
+                        </label>
+                        <label for="size-s-shoes">
+                            <input name="select-size-11" value="S" id="size-s-shoes" type="radio">
+                            <span class="select-size" for="size-s-shoes">S</span>
+                        </label>
+                        <label for="size-m-shoes">
+                            <input name="select-size-11" value="M" id="size-m-shoes" type="radio">
+                            <span class="select-size" for="size-m-shoes">M</span>
+                        </label>
+                        <label for="size-l-shoes">
+                            <input name="select-size-11" value="L" id="size-l-shoes" type="radio">
+                            <span class="select-size" for="size-l-shoes">L</span>
+                        </label>
+                        <label for="size-ll-shoes">
+                            <input name="select-size-11" value="2L" id="size-ll-shoes" type="radio">
+                            <span class="select-size" for="size-ll-shoes">2L</span>
+                        </label>
+                        <label for="size-lll-shoes">
+                            <input name="select-size-11" value="3L" id="size-lll-shoes" type="radio">
+                            <span class="select-size" for="size-lll-shoes">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('W-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-11">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item-shoes" data-product-id="12" data-image-src="images/Shoes/shoe2.jpg" data-filter-opt1="Men" data-filter-opt2="Spring">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-12">R-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-12">35.75</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/shoe2.jpg" alt="R-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoe12">
+                            <input name="select-size-12" value="SS" id="size-ss-shoes12" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes12">SS</span>
+                        </label>
+                        <label for="size-s-shoes12">
+                            <input name="select-size-12" value="S" id="size-s-shoes12" type="radio">
+                            <span class="select-size" for="size-s-shoes12">S</span>
+                        </label>
+                        <label for="size-m-shoes12">
+                            <input name="select-size-12" value="M" id="size-m-shoes12" type="radio">
+                            <span class="select-size" for="size-m-shoes12">M</span>
+                        </label>
+                        <label for="size-l-shoes12">
+                            <input name="select-size-12" value="L" id="size-l-shoes12" type="radio">
+                            <span class="select-size" for="size-l-shoes12">L</span>
+                        </label>
+                        <label for="size-ll-shoes12">
+                            <input name="select-size-12" value="2L" id="size-ll-shoes12" type="radio">
+                            <span class="select-size" for="size-ll-shoes12">2L</span>
+                        </label>
+                        <label for="size-lll-shoes12">
+                            <input name="select-size-12" value="3L" id="size-lll-shoes12" type="radio">
+                            <span class="select-size" for="size-lll-shoes12">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('R-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-12">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item-shoes" data-product-id="13" data-image-src="images/Shoes/shoe3.jpg" data-filter-opt1="Women" data-filter-opt2="Winter">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-13">L-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-13">30.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/shoe3.jpg" alt="L-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoe13">
+                            <input name="select-size-13" value="SS" id="size-ss-shoes13" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes13">SS</span>
+                        </label>
+                        <label for="size-s-shoes13">
+                            <input name="select-size-13" value="S" id="size-s-shoes13" type="radio">
+                            <span class="select-size" for="size-s-shoes13">S</span>
+                        </label>
+                        <label for="size-m-shoes13">
+                            <input name="select-size-13" value="M" id="size-m-shoes13" type="radio">
+                            <span class="select-size" for="size-m-shoes13">M</span>
+                        </label>
+                        <label for="size-l-shoes13">
+                            <input name="select-size-13" value="L" id="size-l-shoes13" type="radio">
+                            <span class="select-size" for="size-l-shoes13">L</span>
+                        </label>
+                        <label for="size-ll-shoes13">
+                            <input name="select-size-13" value="2L" id="size-ll-shoes13" type="radio">
+                            <span class="select-size" for="size-ll-shoes13">2L</span>
+                        </label>
+                        <label for="size-lll-shoes13">
+                            <input name="select-size-13" value="3L" id="size-lll-shoes13" type="radio">
+                            <span class="select-size" for="size-lll-shoes13">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('L-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-13">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item-shoes" data-product-id="14" data-image-src="images/Shoes/shoe4.jpg" data-filter-opt1="Women" data-filter-opt2="Fall">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-14">X-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-14">25.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/shoe4.jpg" alt="L-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoe14">
+                            <input name="select-size-14" value="SS" id="size-ss-shoes14" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes14">SS</span>
+                        </label>
+                        <label for="size-s-shoes14">
+                            <input name="select-size-14" value="S" id="size-s-shoes14" type="radio">
+                            <span class="select-size" for="size-s-shoes14">S</span>
+                        </label>
+                        <label for="size-m-shoes14">
+                            <input name="select-size-14" value="M" id="size-m-shoes14" type="radio">
+                            <span class="select-size" for="size-m-shoes14">M</span>
+                        </label>
+                        <label for="size-l-shoes14">
+                            <input name="select-size-14" value="L" id="size-l-shoes14" type="radio">
+                            <span class="select-size" for="size-l-shoes14">L</span>
+                        </label>
+                        <label for="size-ll-shoes14">
+                            <input name="select-size-14" value="2L" id="size-ll-shoes14" type="radio">
+                            <span class="select-size" for="size-ll-shoes14">2L</span>
+                        </label>
+                        <label for="size-lll-shoes14">
+                            <input name="select-size-14" value="3L" id="size-lll-shoes14" type="radio">
+                            <span class="select-size" for="size-lll-shoes14">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('X-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-14">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item-shoes" data-product-id="15" data-image-src="images/Shoes/shoe5.jpg" data-filter-opt1="Women" data-filter-opt2="Spring">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-15">B-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-15">19.99</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/shoe5.jpg" alt="B-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoe15">
+                            <input name="select-size-15" value="SS" id="size-ss-shoes15" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes15">SS</span>
+                        </label>
+                        <label for="size-s-shoes15">
+                            <input name="select-size-15" value="S" id="size-s-shoes15" type="radio">
+                            <span class="select-size" for="size-s-shoes15">S</span>
+                        </label>
+                        <label for="size-m-shoes15">
+                            <input name="select-size-15" value="M" id="size-m-shoes15" type="radio">
+                            <span class="select-size" for="size-m-shoes15">M</span>
+                        </label>
+                        <label for="size-l-shoes15">
+                            <input name="select-size-15" value="L" id="size-l-shoes15" type="radio">
+                            <span class="select-size" for="size-l-shoes15">L</span>
+                        </label>
+                        <label for="size-ll-shoes15">
+                            <input name="select-size-15" value="2L" id="size-ll-shoes15" type="radio">
+                            <span class="select-size" for="size-ll-shoes15">2L</span>
+                        </label>
+                        <label for="size-lll-shoes15">
+                            <input name="select-size-15" value="3L" id="size-lll-shoes15" type="radio">
+                            <span class="select-size" for="size-lll-shoes15">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('B-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-15">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item-shoes" data-product-id="16" data-image-src="images/Shoes/shoe6.jpg" data-filter-opt1="Women" data-filter-opt2="Fall">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-16">Y-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-16">25.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/shoe6.jpg" alt="Y-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoe16">
+                            <input name="select-size-16" value="SS" id="size-ss-shoes16" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes16">SS</span>
+                        </label>
+                        <label for="size-s-shoes16">
+                            <input name="select-size-16" value="S" id="size-s-shoes16" type="radio">
+                            <span class="select-size" for="size-s-shoes16">S</span>
+                        </label>
+                        <label for="size-m-shoes16">
+                            <input name="select-size-16" value="M" id="size-m-shoes16" type="radio">
+                            <span class="select-size" for="size-m-shoes16">M</span>
+                        </label>
+                        <label for="size-l-shoes16">
+                            <input name="select-size-16" value="L" id="size-l-shoes16" type="radio">
+                            <span class="select-size" for="size-l-shoes16">L</span>
+                        </label>
+                        <label for="size-ll-shoes16">
+                            <input name="select-size-16" value="2L" id="size-ll-shoes16" type="radio">
+                            <span class="select-size" for="size-ll-shoes16">2L</span>
+                        </label>
+                        <label for="size-lll-shoes16">
+                            <input name="select-size-16" value="3L" id="size-lll-shoes16" type="radio">
+                            <span class="select-size" for="size-lll-shoes16">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('Y-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-16">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item-shoes" data-product-id="17" data-image-src="images/Shoes/Sshoe.jpg" data-filter-opt1="Men" data-filter-opt2="Spring">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-17">A-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-17">25.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/Sshoe.jpg" alt="A-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoe17">
+                            <input name="select-size-17" value="SS" id="size-ss-shoes17" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes17">SS</span>
+                        </label>
+                        <label for="size-s-shoes17">
+                            <input name="select-size-17" value="S" id="size-s-shoes17" type="radio">
+                            <span class="select-size" for="size-s-shoes17">S</span>
+                        </label>
+                        <label for="size-m-shoes17">
+                            <input name="select-size-17" value="M" id="size-m-shoes17" type="radio">
+                            <span class="select-size" for="size-m-shoes17">M</span>
+                        </label>
+                        <label for="size-l-shoes17">
+                            <input name="select-size-17" value="L" id="size-l-shoes17" type="radio">
+                            <span class="select-size" for="size-l-shoes17">L</span>
+                        </label>
+                        <label for="size-ll-shoes17">
+                            <input name="select-size-17" value="2L" id="size-ll-shoes17" type="radio">
+                            <span class="select-size" for="size-ll-shoes17">2L</span>
+                        </label>
+                        <label for="size-lll-shoes17">
+                            <input name="select-size-17" value="3L" id="size-lll-shoes17" type="radio">
+                            <span class="select-size" for="size-lll-shoes17">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('A-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-17">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item-shoes" data-product-id="18" data-image-src="images/Shoes/Wshoe1.jpg" data-filter-opt1="Women" data-filter-opt2="Spring">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-18">W-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-18">25.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/Wshoe1.jpg" alt="W-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoe18">
+                            <input name="select-size-18" value="SS" id="size-ss-shoes18" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes18">SS</span>
+                        </label>
+                        <label for="size-s-shoes18">
+                            <input name="select-size-18" value="S" id="size-s-shoes18" type="radio">
+                            <span class="select-size" for="size-s-shoes18">S</span>
+                        </label>
+                        <label for="size-m-shoes18">
+                            <input name="select-size-18" value="M" id="size-m-shoes18" type="radio">
+                            <span class="select-size" for="size-m-shoes18">M</span>
+                        </label>
+                        <label for="size-l-shoes18">
+                            <input name="select-size-18" value="L" id="size-l-shoes18" type="radio">
+                            <span class="select-size" for="size-l-shoes18">L</span>
+                        </label>
+                        <label for="size-ll-shoes18">
+                            <input name="select-size-18" value="2L" id="size-ll-shoes18" type="radio">
+                            <span class="select-size" for="size-ll-shoes18">2L</span>
+                        </label>
+                        <label for="size-lll-shoes18">
+                            <input name="select-size-18" value="3L" id="size-lll-shoes18" type="radio">
+                            <span class="select-size" for="size-lll-shoes18">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('W-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-18">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item-shoes" data-product-id="19" data-image-src="images/Shoes/Wshoe2.jpg" data-filter-opt1="Men" data-filter-opt2="Fall">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-19">Q-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-19">25.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/Wshoe2.jpg" alt="Q-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoe19">
+                            <input name="select-size-19" value="SS" id="size-ss-shoes19" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes19">SS</span>
+                        </label>
+                        <label for="size-s-shoes19">
+                            <input name="select-size-19" value="S" id="size-s-shoes19" type="radio">
+                            <span class="select-size" for="size-s-shoes19">S</span>
+                        </label>
+                        <label for="size-m-shoes19">
+                            <input name="select-size-19" value="M" id="size-m-shoes19" type="radio">
+                            <span class="select-size" for="size-m-shoes19">M</span>
+                        </label>
+                        <label for="size-l-shoes19">
+                            <input name="select-size-19" value="L" id="size-l-shoes19" type="radio">
+                            <span class="select-size" for="size-l-shoes19">L</span>
+                        </label>
+                        <label for="size-ll-shoes19">
+                            <input name="select-size-19" value="2L" id="size-ll-shoes19" type="radio">
+                            <span class="select-size" for="size-ll-shoes19">2L</span>
+                        </label>
+                        <label for="size-lll-shoes19">
+                            <input name="select-size-19" value="3L" id="size-lll-shoes19" type="radio">
+                            <span class="select-size" for="size-lll-shoes19">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('Q-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-19">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+
+                    <li class="list-of-items carousel-item-shoes" data-product-id="20" data-image-src="images/Shoes/Wshoe3.jpg" data-filter-opt1="Women" data-filter-opt2="Fall">
+                        <div class="item-descript">
+                        <p>Item name:<span class="product-name-20">G-shoes</span></p>
+                        <p>Item price ($)<span id="item-price-20">25.00</span></p>
+                        <p>seller: ABC comp.</p>
+                        <img class="item-img" src="images/Shoes/Wshoe3.jpg" alt="G-shoes">
+                        <p>Item description <br>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias temporibus quae corporis minima sapiente dolorum autem, exercitationem quod porro enim error ipsam sit ullam saepe distinctio perferendis incidunt deleniti accusamus!</p>
+                        </div>
+                        <div class="item-size">
+                        <h2>Size:</h2>
+                        <label for="size-ss-shoe20">
+                            <input name="select-size-20" value="SS" id="size-ss-shoes20" type="radio" checked>
+                            <span class="select-size" for="size-ss-shoes20">SS</span>
+                        </label>
+                        <label for="size-s-shoes20">
+                            <input name="select-size-20" value="S" id="size-s-shoes20" type="radio">
+                            <span class="select-size" for="size-s-shoes20">S</span>
+                        </label>
+                        <label for="size-m-shoes20">
+                            <input name="select-size-20" value="M" id="size-m-shoes20" type="radio">
+                            <span class="select-size" for="size-m-shoes20">M</span>
+                        </label>
+                        <label for="size-l-shoes20">
+                            <input name="select-size-20" value="L" id="size-l-shoes20" type="radio">
+                            <span class="select-size" for="size-l-shoes20">L</span>
+                        </label>
+                        <label for="size-ll-shoes20">
+                            <input name="select-size-20" value="2L" id="size-ll-shoes20" type="radio">
+                            <span class="select-size" for="size-ll-shoes20">2L</span>
+                        </label>
+                        <label for="size-lll-shoes20">
+                            <input name="select-size-20" value="3L" id="size-lll-shoes20" type="radio">
+                            <span class="select-size" for="size-lll-shoes20">3L</span>
+                        </label>
+                        </div>
+                        <div class="item-cart-button">
+                            <button class="add-cart-button" onclick="addingToCart('G-shoes', this)">Add to cart</button>
+                            <button class="counter-minus">-</button>
+                            <span class="item-count itemTotal-20">0</span>
+                            <button class="counter-add">+</button>
+                            <button id="check-out-shoes" class="checkout-button" onclick="updateCartContent()">Check out</button>
+                        </div>
+                    </li>
+                    
+                </ul>
+                <button class="carousel-button right-shoes">
+                <i id="right-Shoes" class="fas fa-chevron-right"></i>
+                </button>  
+            </div>
+            
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <aside class="check-out-cart-panel" id="display-cart">
+        <div class="cart-payment">
+            <button id="close-cart">Close cart</button>
+            <button id="to-payment">Payment</button>
+        </div>
+        <div id="checkout-items" class="checking-out-item">
+            <ul id="checked-out-item" class="checkingout">
+
+                
+            </ul>
+        </div>
+    </aside>
+    <div id="overlay"></div>
+
+<!--<script src="script/jsscript.js" defer></script>-->
+<script src="script/order.js"></script>
+
+</body>
+     
+    <!-- <script>/*
+document.addEventListener('DOMContentLoaded', () => {
+    const saveButtons = document.querySelectorAll('.checkout-button');
+
+    saveButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const container = event.target.closest('.list-of-items');
+            if (container) {
+                const containerId = container.id;
+                const title = container.querySelector('h2').textContent;
+                const description = container.querySelector('p').textContent;
+                let parsedItem = JSON.parse(localStorage.getItem('pass')) || [];
+                let voidArray = [container.innerHTML];
+                var arrayOfItem = [{
+                    id: 'New item' + (voidArray.length + 1),
+                    timestap: new Date().toISOString()
+                }];
+                voidArray.push(arrayOfItem);
+                //voidArray = container.innerHTML;
+               // const itemData = container.innerHTML;
+                
+                // Convert the object to a JSON string
+              //  const itemDataString = JSON.stringify(itemData);
+
+                // Save to localStorage using the container's ID as the key
+                localStorage.setItem('pass',JSON.stringify(voidArray));
+
+                console.log('passed');
+            }
+        });
+    });
+});
+     </script>-->
+</html>
