@@ -9,58 +9,127 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="title-cart-panel">
+    <header class="title-cart-panel" id="display-on-scroll">
         <h1>Online shopping 101</h1>
         <div class="item-to-cart-checkout">
             <button id="check-out-cart"></button>
             <span id="added-to-cart" class="cart-checkout-qty">0</span>
         </div>
-    </div>
+    </header>
     <div class="category-panel">
-            <ul class="category-button-panel">
-                <li><button class="category-button">▼Categories</button></li>
-                <li class="drop-buttons">
-                    <div><button>Clothes</button></div>
-                    <div><button>Shoes</button></div>
-                    <div><button>Bags</button></div>
-                    <div><button>Accessories</button></div>
-                </li>
-            </ul>
-            <ul class="filter-panel">
-                <li>
-                    <button id="filter-button">Filter</button>
-                </li>
-                <li>
-                    <label for=""><input name="filter-category" value="Men" data-option="Men"  type="checkbox">
-                    Men</label>
-                </li>
-                <li>
-                    <label for=""><input name="filter-category" value="Women" data-option="Women" type="checkbox">
-                    Women</label>
-                </li>
-                <li>
-                    <label for="">
-                    <input name="filter-category" value="Winter" data-option="Winter" type="checkbox">
-                    Winter</label>
-                </li>
-                <li>
-                    <label for="">
-                    <input name="filter-category" value="Spring" data-option="Spring" type="checkbox">
-                    Spring</label>
-                </li>
-                <li>
-                    <label for="">
-                    <input name="filter-category" value="Summer" data-option="Summer" type="checkbox">
-                    Summer</label>
-                </li>
-                <li>
-                    <label for="">
-                    <input name="filter-category" value="Fall" data-option="Fall" type="checkbox">
-                    Fall</label>
-                </li>
-            </ul>
+            <div class="news-button"><span class="drop-menu-items">News</span>
+                <div class="category-button-news">
+                    <div><button class="new-item-display-button newsItemActive" data-target="news-1">Trending item</button>
+                         <button class="new-item-display-button" data-target="news-2">New releases</button>
+                         <button class="new-item-display-button" data-target="news-3">Most ordered</button>
+                         <button class="new-item-display-button" data-target="news-4">Creative styles</button>
+                    </div>
+                    <div class="new-item-panel" id="news-1">
+                        <div class="news-descript">
+                            <span>Some text</span> 
+                            <span>Some text</span> 
+                            <span>Some text</span>
+                        </div> 
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum dolorem praesentium at alias velit cum. Eius optio maiores delectus unde ipsam labore a numquam quod aperiam temporibus, corporis qui accusamus!</p>
+                        <img src="images/category/communication-social-media-icons.jpg" alt="Trend icon">
+                    </div>
+                    <div class="new-item-panel" id="news-2">
+                        <p>Some text here: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum dolorem praesentium at alias velit cum. Eius optio maiores delectus unde ipsam labore a numquam quod aperiam temporibus, corporis qui accusamus!</p>
+                        <img src="images/category/couple-backpacks-rocks-sunset.jpg" alt="New release">
+                    </div>
+                    <div class="new-item-panel" id="news-3">
+                        <p>Some text here: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum dolorem praesentium at alias velit cum. Eius optio maiores delectus unde ipsam labore a numquam quod aperiam temporibus, corporis qui accusamus!</p>
+                        <img src="images/category/denim-sneakers-street-style.jpg" alt="Most ordered">
+                    </div>
+                    <div class="new-item-panel" id="news-4">
+                        <p>Some text here: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum dolorem praesentium at alias velit cum. Eius optio maiores delectus unde ipsam labore a numquam quod aperiam temporibus, corporis qui accusamus!</p>
+                        <img src="images/upper-panel/vecteezy_antique-table-holds-old-literature-rustic-elegance_24642428.jpg" alt="Creative styles">
+                    </div>
+                </div>
+            </div>
+            <div class="category-button"><span class="drop-menu-items">Categories</span>
+                <div class="category-button-panel">
+                    <div><button class="category-images"><span>Clothes</span><img src="images/category/still-life-rendering-jackets-display.jpg" alt="category jacket"></button></div>
+                    <div><button class="category-images"><span>Shoes</span><img src="images/category/denim-sneakers-street-style.jpg" alt="category shoes"></button></div>
+                    <div><button class="category-images"><span>Best offers</span><img src="images/category/couple-backpacks-rocks-sunset.jpg" alt="category bags"></button></div>
+                    <div><button class="category-images"><span>Outdoors</span><img src="images/category/decorative-cosmetics-accessories-sunglasses-hat-white-table.jpg" alt="category accessories"></button></div>
+                </div>
+            </div>
+            <div class="filter-drop"><span class="drop-menu-items">Filter</span>
+                <div class="filter-panel">
+                    <div class="filter-panel-button">
+                        <button id="filter-button">Filter</button>
+                        <button id="filter-button-cancel">Cancel</button>
+                    </div>
+                    <div class="filter-input-panel">
+                        <div class="filter-input-panel-first filter-gender">
+                            <div>
+                                <label for="">
+                                <input class="input-filter" name="filter-category" value="Men" data-option="Men"  type="checkbox"></label>
+                                <span>Men</span>
+                            </div>
+                            <div>
+                                <label for="">
+                                <input class="input-filter" name="filter-category" value="Women" data-option="Women" type="checkbox"></label>
+                                <span>Women</span>
+                            </div>
+                        </div>
+                        <div class="filter-input-panel-first filter-season">
+                            <div class="winter-input">
+                                <label for="">
+                                <input class="input-filter" name="filter-category" value="Winter" data-option="Winter" type="checkbox"></label>
+                                <span>Winter</span>  
+                            </div>
+                            <div class="spring-input">
+                                <label for="">
+                                <input class="input-filter" name="filter-category" value="Spring" data-option="Spring" type="checkbox"></label>
+                                <span>Spring</span>
+                            </div>
+                            <div class="summer-input">
+                                <label for="">
+                                <input class="input-filter" name="filter-category" value="Summer" data-option="Summer" type="checkbox"></label>
+                                <span>Summer</span>
+                            </div>
+                            <div class="fall-input">
+                                <label for="">
+                                <input class="input-filter" name="filter-category" value="Fall" data-option="Fall" type="checkbox"></label>
+                                <span>Fall</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
     </div>
     <div class="main-panel">
+        <div class="main-panel-upper">
+            <div class="main-panel-upper-first upper-carousel">
+                <h2 class="main-panel-upper-h2">See what's trending this summer</h2>
+                <p>What's hot this summer? It's all here!</p>
+                <button class="upper-carousel-button">Take a look</button>
+            </div>
+            <div class="main-panel-upper-second upper-carousel">
+                <div class="main-panel-upper-first-div">
+                    <h2 class="main-panel-upper-h2">Collectibles</h2>
+                    <p>Take home some of our collectibles.</p>
+                    <button class="upper-carousel-button">Check 'em out</button>
+                </div>
+                <div class="main-panel-upper-second-div">
+                    <div><button>Necklace</button><img src="images/upper-panel/vecteezy_product-jewelry-images-free-download-free-jpge_12621319.jpg" alt="Necklace"></div>
+                    <div><button>Antiques</button><img src="images/upper-panel/vecteezy_antique-table-holds-old-literature-rustic-elegance_24642428.jpg" alt="Antiques"></div>
+                    <div><button>Sports</button><img src="images/upper-panel/vecteezy_a-colorful-running-shoe-on-a-colorful-background_56699902.jpg" alt="Sports"></div>
+                </div>
+            </div>
+            <div  class="main-panel-upper-third upper-carousel">
+                <h2 class="main-panel-upper-h2">Branded</h2>
+                <p>Let's take you to the next chapter</p>
+                <button class="upper-carousel-button">Shop now</button>
+            </div>
+                <div class="left-upper" onclick="prevSlide()">&#10094;</div>
+                <div class="right-upper" onclick="nextSlide()">&#10095;</div>
+        </div>
+
         <div class="item-panel">
             <div class="clothe-panel owl-carousel-container">
                 <h2 class="item-title-category">Clothes</h2>
@@ -525,7 +594,7 @@
             </div>
 
             <div class="clothe-panel owl-carousel-container-shoes">
-                <h2>Shoes</h2>
+                <h2 class="item-title-category">Shoes</h2>
                 <button class="carousel-button left-shoes">
                 <i id="left-Shoes" class="fas fa-chevron-left"></i>
                 </button>
@@ -985,11 +1054,174 @@
                 <i id="right-Shoes" class="fas fa-chevron-right"></i>
                 </button>  
             </div>
-            
-            <div></div>
-            <div></div>
+        </div>
+        <div class="main-panel-lower">
+            <div class="lower-panel-title">
+                <h2 class="item-title-category-lower">Best offer</h2>
+            </div>
+            <div class="lower-panel-content">
+                <div class="item-panel-lower">
+                    <div>
+                        <h4>Hot items</h4>
+                    </div>
+                    <div>
+                        <button><img src="images/category/hot items/close-up-basketball-shoes.jpg" alt="item 1">Item 1</button>
+                        <button><img src="images/category/hot items/collection-beige-tone-colored-pants.jpg" alt="item 2">Item 2</button>
+                        <button><img src="images/category/hot items/fashion-shoes-sneakers.jpg" alt="item 3">Item 3</button>
+                        <button><img src="images/category/hot items/vecteezy_stylish-leather-backpack-on-white-background-generative-ai_29840187.jpg" alt="item 4">Item 4</button>
+                    </div>
+                    <div>
+                        <a href="">See more</a>
+                    </div>
+                </div>
+                <div class="item-panel-lower">
+                    <div>
+                        <h4>Gifts for your love one</h4>
+                    </div>
+                    <div>
+                        <button><img src="images/category/hot items/close-up-portrait-fascinating-happy-woman-hat-outdoor-photo-good-looking-girl-dark-sunglasses-isolated-blur-background.jpg" alt="item 1">Item 1</button>
+                        <button><img src="images/category/hot items/jewellery-bangle-background-with-place-text-banner-fashion-accessories.jpg" alt="item 2">Item 2</button>
+                        <button><img src="images/category/hot items/vecteezy_ai-generated-earrings-made-of-gold-on-a-solid-color_35705132.jpeg" alt="item 3">Item 3</button>
+                        <button><img src="images/category/decorative-cosmetics-accessories-sunglasses-hat-white-table.jpg" alt="item 4">Item 4</button>
+                    </div>
+                    <div>
+                        <a href="">Send to your love ones</a>
+                    </div>
+                </div>  
+                <div class="item-panel-lower">
+                    <div>
+                        <h4>Items on sale right now</h4>
+                    </div>
+                    <div>
+                        <button><img src="images/category/hot items/vecteezy_stylish-leather-backpack-on-white-background-generative-ai_29840187.jpg" alt="item 1">Item 1</button>
+                        <button><img src="images/category/hot items/collection-beige-tone-colored-pants.jpg" alt="item 2">Item 2</button>
+                        <button><img src="images/category/hot items/fashion-shoes-sneakers.jpg" alt="item 3">Item 3</button>
+                        <button><img src="images/category/hot items/vecteezy_stylish-leather-backpack-on-white-background-generative-ai_29840187.jpg" alt="item 4">Item 4</button>
+                    </div>
+                    <div>
+                        <a href="">Discover more</a>
+                    </div>
+                </div>  
+                <div class="item-panel-lower">
+                    <div>
+                        <h4>Season trends</h4>
+                    </div>
+                    <div>
+                        <button><img src="images/category/hot items/close-up-basketball-shoes.jpg" alt="item 1">Item 1</button>
+                        <button><img src="images/category/hot items/collection-beige-tone-colored-pants.jpg" alt="item 2">Item 2</button>
+                        <button><img src="images/category/hot items/fashion-shoes-sneakers.jpg" alt="item 3">Item 3</button>
+                        <button><img src="images/category/hot items/vecteezy_stylish-leather-backpack-on-white-background-generative-ai_29840187.jpg" alt="item 4">Item 4</button>
+                    </div>
+                    <div>
+                        <a href="">See more</a>
+                    </div>   
+                </div> 
+            </div>     
+        </div>
+
+        <div class="main-panel-lower">
+            <div class="lower-panel-title">
+                <h2 class="item-title-category-lower">Outdoors</h2>
+            </div>
+            <div class="lower-panel-content">
+                <div class="item-panel-lower">
+                    <div>
+                        <h4>Mountain climbing</h4>
+                    </div>
+                    <div>
+                        <button><img src="images/category/hot items/close-up-basketball-shoes.jpg" alt="item 1">Item 1</button>
+                        <button><img src="images/category/hot items/collection-beige-tone-colored-pants.jpg" alt="item 2">Item 2</button>
+                        <button><img src="images/category/hot items/fashion-shoes-sneakers.jpg" alt="item 3">Item 3</button>
+                        <button><img src="images/category/hot items/vecteezy_stylish-leather-backpack-on-white-background-generative-ai_29840187.jpg" alt="item 4">Item 4</button>
+                    </div>
+                    <div>
+                        <a href="">See more</a>
+                    </div>
+                </div>
+                <div class="item-panel-lower">
+                    <div>
+                        <h4>Gear up this season</h4>
+                    </div>
+                    <div>
+                        <button><img src="images/category/hot items/close-up-basketball-shoes.jpg" alt="item 1">Item 1</button>
+                        <button><img src="images/category/hot items/collection-beige-tone-colored-pants.jpg" alt="item 2">Item 2</button>
+                        <button><img src="images/category/hot items/fashion-shoes-sneakers.jpg" alt="item 3">Item 3</button>
+                        <button><img src="images/category/hot items/vecteezy_stylish-leather-backpack-on-white-background-generative-ai_29840187.jpg" alt="item 4">Item 4</button>
+                    </div>
+                    <div>
+                        <a href="">Want more</a>
+                    </div>
+                </div>  
+                <div class="item-panel-lower">
+                    <div>
+                        <h4>Gadgets</h4>
+                    </div>
+                    <div>
+                        <button><img src="images/category/hot items/close-up-basketball-shoes.jpg" alt="item 1">Item 1</button>
+                        <button><img src="images/category/hot items/collection-beige-tone-colored-pants.jpg" alt="item 2">Item 2</button>
+                        <button><img src="images/category/hot items/fashion-shoes-sneakers.jpg" alt="item 3">Item 3</button>
+                        <button><img src="images/category/hot items/vecteezy_stylish-leather-backpack-on-white-background-generative-ai_29840187.jpg" alt="item 4">Item 4</button>
+                    </div>
+                    <div>
+                        <a href="">Discover more</a>
+                    </div>
+                </div>  
+                <div class="item-panel-lower">
+                    <div>
+                        <h4>Stylish</h4>
+                    </div>
+                    <div>
+                        <button><img src="images/category/hot items/close-up-basketball-shoes.jpg" alt="item 1">Item 1</button>
+                        <button><img src="images/category/hot items/collection-beige-tone-colored-pants.jpg" alt="item 2">Item 2</button>
+                        <button><img src="images/category/hot items/fashion-shoes-sneakers.jpg" alt="item 3">Item 3</button>
+                        <button><img src="images/category/hot items/vecteezy_stylish-leather-backpack-on-white-background-generative-ai_29840187.jpg" alt="item 4">Item 4</button>
+                    </div>
+                    <div>
+                        <a href="">See more</a>
+                    </div>   
+                </div> 
+            </div>     
         </div>
     </div>
+
+    <footer>
+        <div class="return-top-button">
+            <button>Back to top</button>
+        </div>
+        <div class="contact-div">
+            <div>
+                <img src="images/category/hot items/letter-uppercase-square-n-svgrepo-com.svg" alt="company logo">
+            </div>
+            <div class="contact-div-contents">
+                <span>Curious about us?</span>
+                <a href="">About us</a>
+                <a href="">Contact number:</a>
+                <a href="">Address:</a>
+                <a href="">Location on map</a>
+            </div>
+            <div class="contact-div-contents">
+                <span>Want to sell items on this website?</span>
+                <a href="">About us</a>
+                <a href="">Contact number:</a>
+                <a href="">Address:</a>
+                <a href="">Location on map</a>
+            </div>
+            <div class="contact-div-contents">
+                <span>FAQs</span>
+                <a href="">About us</a>
+                <a href="">Contact number:</a>
+                <a href="">Address:</a>
+                <a href="">Location on map</a>
+            </div>
+        </div>
+        <div class="alright-reserve">
+            <p>© Nov-2025, Online-shopping-101.com, Ⓝ Jonathan Tindungan</p>
+            <a href=""><img src="images/category/hot items/facebook-svgrepo-com.svg" alt="Facebook"></a>
+            <a href=""><img src="images/category/hot items/instagram-rounded-border-svgrepo-com.svg" alt="Instagram"></a>
+            <a href=""><img src="images/category/hot items/linkedin-boerder-svgrepo-com.svg" alt="LinkedIn"></a>
+        </div>
+    </footer>
+     <!--Cart container-->
     <aside class="check-out-cart-panel" id="display-cart">
         <div class="cart-payment">
             <button id="close-cart">Close cart</button>
@@ -1002,11 +1234,11 @@
             </ul>
         </div>
     </aside>
+    <!--For covering the main page when cart is opened-->
     <div id="overlay"></div>
 
-<!--<script src="script/jsscript.js" defer></script>-->
-<script src="script/order.js"></script>
 
+<script src="script/order.js"></script>
 </body>
      
     <!-- <script>/*

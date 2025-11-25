@@ -4,6 +4,9 @@ body{
     display: flex;
     flex-direction: column;
     background-color: #add8e6;
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+    background: linear-gradient(to bottom, #add8e6 0%, white  90%, transparent 50%, transparent 100%);
 }
 ul{
     margin: 0;
@@ -15,15 +18,21 @@ li{
 }
 .main-panel{
     display: flex;
-    gap: 0.25em;
+    flex-direction: column;
+    gap: 2em;
     width: 100%;
     margin-top: 1%;
+    position: relative;
+    margin: auto;
 }
 .title-cart-panel{
     display: flex;
     width: 100%;
     height: 10%;
     background-color: #add8e6;
+    position: fixed;
+    z-index: 99;
+    transition: 0.3s ease-in-out;
 }
 .title-cart-panel h1{
     flex-grow: 8;
@@ -58,86 +67,577 @@ li{
     width: 2em;
     height: 2em;
 }
+
+
+
+
 .category-panel{
     width: 100%;
-    height: 25px;
-    margin: 0;
+    height: 4vh;
+    margin: 5.4% 0% 0% 0%;
     padding: 0;
     display: flex;
     align-items: center;
     background-color: #87ceeb;
 }
-.category-button-panel{
-    width: 10%;
+.news-button{
+    width: fit-content;
+    min-height: inherit;
     margin: 0% 0% 0% 2%;
+    padding: 2% 0%;
+    text-align: center;
+    font-size: 1.2em;
+    overflow: hidden;
+
 }
-.category-button-panel ul{
-    display: flex;
-    margin: 0%; 
-}
-.category-button {
+.category-button-news{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    margin: 7.6% auto 0% auto;
+    align-content: center;
     width: 100%;
-    height: 25px;
-    margin: 0%;
-    padding: 0%;
+    height: 30%;
+    background-color: whitesmoke;
+    overflow: hidden;
+    z-index: 999;
+}
+.category-button-news div{
+    min-height: inherit;
+}
+.category-button-news div:first-child{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    gap: 5%;
+    margin: 2% 0% 0% 2%;
+}
+.new-item-display-button{
+   width: fit-content;
+   border: none; 
+   font-size: 0.9em;
+   display: inline-block;
+   overflow: hidden;
+   position: relative;
+   transition: color 0.5s ease-in-out;
+   z-index: 2;
+}
+.new-item-display-button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
     background-color: #87ceeb;
+    transition: width 0.5s ease-in-out;
+    z-index: -1;
+}
+.new-item-display-button:hover{
+    cursor: pointer;
+}
+.new-item-display-button:hover::before{
+    width: 100%;
+    left: 0;
+}
+.new-item-panel{
+    width: 80%;
+    height: 100%;
+    display: none;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: rgba(119, 228, 255, 0.1);
+    opacity: 0.8;
+    margin: 0;
+}
+.news-descript{
+    display: flex;
+    width: 10%;
+    height: inherit;
+    margin: 0% 0% 0% 0%;
+
+}
+.news-descript span{
+    width: fit-content;
+    display: flex;
+    align-self: left;
+}
+.news-descript span:first-child{
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 0;
+}
+.news-descript span:nth-child(2){
+    font-size: 0.8em;
+    margin: 10% 0% 0% 0%;
+}
+.news-descript span:last-child{
+    font-size: 0.7em;
+    margin: 15% 0% 0% 0%;
+}
+.new-item-panel p{
+    width:60%;
+    display: flex;
+    text-align: left;
+    margin: 2% 0% 0% 0%;
+    font-size: 0.8em;
+    line-height: 1.5em;
+}
+.newsItemActive{
+    background-color: #87ceeb;
+    border-radius: 2em;
+}
+#news-1{
+    display: flex;
+}
+.category-button-news div:nth-child(3),
+.category-button-news div:nth-child(4),
+.category-button-news div:nth-child(5){
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.new-item-panel img{
+    width: 30%;
+    max-width: 30%;
+    max-height: 100%;
+    min-width: 10%;
+    min-height: 80%;
+    margin: auto 5% auto 2%;
+    border-radius: 2em;
+    border: 1px #4682b4 solid;
+}
+.news-button:hover .category-button-news{
+    display: flex;
+    position: absolute;
+    animation: slide 600ms ease-in-out;
+    top: 0;
+    z-index: 1;
+}
+    @keyframes slide {
+        from{
+            margin-top: -10%;
+           
+        }
+        to{
+            margin-top: 7.6%;
+            
+        }
+    }
+.category-button {
+    width: fit-content;
+    min-height: inherit;
+    margin: 0% 0% 0% 2%;
+    padding: 2% 0%;
     border: none;
     text-align: center;
     font-size: 1.2em;
+    overflow: hidden;
+        
 }
-.drop-buttons{
-    display: none;
+.category-button-panel{
     position: absolute;
+    display: none;
     top: 0;
-    margin: 7.5% auto 0% auto;
+    left: 0;
+    margin: 7.6% auto 0% auto;
     align-content: center;
-    width: inherit;
+    width: 100%;
+    height: 30%;
+    background-color: whitesmoke;
+}
+.category-button-panel div{
+    width: 20%;
+    height: 90%;
+    margin-top: 0%;
+    text-align: center;
+    margin: auto;
+}
+.category-images span{
+    margin: 2% 0%;
+    font-size: 1.2em;
+}
+.category-button-panel button{
+   width: 100%;
+   height: 100%;
+   border: none;
+   background-color: white;
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   border-radius: 2em;
    
 }
-.drop-buttons div{
+.category-images img{
     width: 100%;
+    height: 90%;
+    margin: 0%;
+    border-radius: 2em;
+    opacity: 0.5;
 }
-.drop-buttons div button{
-    width: 100%;  
-}
-.category-button-panel:hover .drop-buttons{
-    display: block;
-    position: absolute;
-    background-color: rgba(95, 115, 151, 0.15);
-    top: -0.5%;
-    margin-left: 1.5%;
-    padding: 0% 0.5% 0.5% 0%;
-    z-index: 1;
-}
-.filter-panel{
-    width: 40%;
-    margin: 0% 0% 0% 3%;
-    display: flex;
-}
-.filter-panel li{
-    display: flex;
-    align-items: center;
-    margin: 0% auto;
-}
-.filter-panel li input{
-    width: 1.75em;
-    height: 1.75em;
-    margin: auto 10% auto 0%;
-    
-}
-.filter-panel li label{
-    display: flex;
-    align-items: center;
-    margin: auto 0% auto 0%;
-}
-.filter-panel li button{
-    margin: 0% auto;
-    background-color: #87ceeb;
-    border: 1px white solid;
-}
-.filter-panel li button:hover{
+.category-images img:hover{
+    opacity: 1;
     cursor: pointer;
 }
+.category-button:hover .category-button-panel{
+    display: flex;
+    position: absolute;
+    animation: slide 600ms ease-in-out;
+    z-index: 1;
+}
+    @keyframes slide {
+        from{
+            margin-top: -10%;
+        }
+        to{
+            margin-top: 7.6%;
+        }
+    }
+
+.filter-drop{
+    min-height: inherit;
+    overflow: hidden;
+    margin: 0% 0% 0% 2%;
+    padding: 2% 0;
+    font-size: 1.2em;
+    width: fit-content;
+}
+.filter-panel{
+    width: 20%;
+    height: 25%;
+    margin: 7.6% auto 0% auto;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    bottom: 0;
+    background-color: whitesmoke;
+    z-index: 999;
+}
+.filter-panel-button{
+    display: flex;
+    margin: 0% 0% 0% 5%;
+    height: 20%;
+    width: 100%;
+    padding: 0% 0% 5% 0%;
+    
+}
+.filter-panel-button:first-child{
+    width: 90%;
+    margin: 5% auto 0 auto;
+    gap: 5%;
+}
+.filter-panel-button button{
+    width: inherit;
+    height: fit-content;
+    margin: 0% auto;
+    background-color: #87ceeb;
+    border-radius: 2em;
+    border: none;
+    font-size: 0.9em;
+}
+.filter-panel-button button:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.filter-input-panel{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.filter-input-panel-first{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    margin: 0 auto;
+}
+.filter-gender {
+    width: 100%;
+    height: fit-content;
+}
+.filter-gender div {
+    width: 50%;
+    display: flex;
+    padding-left: 5%;
+}
+.filter-gender div:first-child {
+    margin-left: 5%;
+}
+.filter-season{
+    width: 100%;
+    height: 50%;
+    margin: 8% auto 0% auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+     align-items: center;
+    justify-content: center;
+}
+.filter-season div {
+    width: 100%;
+    display: flex;
+    padding-left: 11%;
+    margin-left: 10%;
+}
+.filter-season div:nth-child(2),
+.filter-season div:nth-child(4){
+    margin-left: 5%;
+}
+.filter-gender div input, 
+.filter-season div input{
+    width: 1.7em;
+    height: 1.7em;
+    margin: auto 0%;
+    display: flex;
+    justify-items: center;
+}
+.filter-gender div label, 
+.filter-season div label{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: auto 0% auto 0%;
+    height: fit-content;
+}
+.filter-season div label{
+   display: flex;
+   align-content: center;
+}
+.filter-gender div span, 
+.filter-season div span{
+    display: flex;
+    align-items: center;
+    margin: auto 0%;
+    font-size: 0.7em;
+    height: fit-content;
+    padding-left: 5%;
+}
+.winter-input{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+   
+}
+.spring-input{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.summer-input{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.fall-input{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+/*
+.filter-input-panel div label{
+    display: flex;;
+    align-items: center;
+    justify-items: center;
+    margin: auto 0% auto 0%;
+    height: fit-content;
+}
+.filter-input-panel div input{
+    width: 1.7em;
+    height: 1.7em;
+    margin: auto 0;
+    display: flex;
+    justify-items: center;
+    
+}*/
+.filter-drop:hover .filter-panel{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 16%;
+    animation: filterSlide 600ms ease-in-out;
+    z-index: 1;
+}
+    @keyframes filterSlide {
+        from{
+            margin-top: -10%;
+        }
+        to{
+            margin-top: 7.6%;
+        }
+    }
+.drop-menu-items:hover{
+    cursor: pointer;
+}
+.main-panel-upper{
+    width: 100%;
+    height: 20em;
+    margin: 1% auto;
+    position: relative;
+}
+*{
+    box-sizing: border-box;
+}
+.main-panel-upper-h2{
+    margin: 3% 0% 0% 2%;
+    font-size: 2em;
+     width: fit-content;
+    backdrop-filter: blur(1px);   
+}
+.main-panel-upper div p{
+    font-size: 1.5em;
+    font-weight: bolder;
+    width: fit-content;
+    margin: 10% 0% 0% 2%;
+    backdrop-filter: blur(1px);  
+}
+.upper-carousel-button{
+    font-size: 2.2em;
+    font-weight: bold;
+    width: fit-content;
+    margin: 1% 0% 0% 1.5%;
+    border: none;
+    background-color: transparent;
+    backdrop-filter: blur(0.75px);
+}
+.upper-carousel-button:hover{
+    cursor: pointer;
+}
+.upper-carousel-button::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    bottom: 0;
+    border-bottom: 2px #87ceeb solid;
+    transition: width 0.5s ease-in-out;
+    z-index: -1;
+}
+.upper-carousel-button:hover::after{
+    width: 100%;
+}
+.main-panel-upper-first{
+    background-image: url('../images/upper-panel/summer.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20em;
+    width: 100%;
+    flex-direction: column;
+}
+.main-panel-upper-second{
+    background-image: url('../images/upper-panel/top-view-composition-with-neatly-arranged-organized-sport-items.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20em;
+    width: 100%;
+}
+.main-panel-upper-first-div{
+    width: 40%;
+}
+.main-panel-upper-first-div:first-child h2{
+    margin: 8% 0% 0% 5%;
+}
+.main-panel-upper-first-div:first-child p{
+    margin: 24% 0% 0% 5%;
+}
+.main-panel-upper-first-div:first-child button{
+    margin: 3% 0% 0% 3.5%;
+}
+.main-panel-upper-second-div{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 2%;
+    height: 100%;
+    margin: 0% 5% 0% 20%;
+}
+.main-panel-upper-second-div div{
+    width: 30%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: 35% 0% 0% 0%;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2em;
+}
+.main-panel-upper-second-div div img{
+    width: 100%;
+    height: 80%;
+    
+}
+.main-panel-upper-second-div div button{
+    font-size: 1.2em;
+    border: none;
+    background-color: transparent;
+}
+.main-panel-upper-third{
+    background-image: url('../images/upper-panel/tourism-items-arrangement-top-view.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 0 #333,
+        -1px -1px 0 #333,
+        1px -1px 0 #333,
+        -1px 1px 0 #333,
+        2px 2px 5px rgba(0,0,0,0.65);
+    width: 100%;
+    flex-direction: column;
+}
+.upper-carousel{
+    display: none;
+    height: 20em;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+.upper-carousel.upper-display{
+    display: flex;
+}
+.upper-carousel-buttons{
+    display: flex;
+    width: 100%;
+    max-height: 10%;
+}
+.left-upper, .right-upper{
+    position: absolute;
+    top: 50%;
+    font-size: 3em;
+    margin: auto;
+    padding: 0;
+    color: white;
+    text-shadow: 1px 1px 0 #333,
+        -1px -1px 0 #333,
+        1px -1px 0 #333,
+        -1px 1px 0 #333,
+        2px 2px 5px rgba(0,0,0,0.65);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.left-upper{
+    left: 1%;
+}
+.right-upper{
+    right: 1%;
+}
+@keyframes fadeIn{
+    from{opacity: 0.5;}
+    to{opacity: 1;}
+}
+
+
+
 .item-panel{
     width: 96%;
     height: 100%;
@@ -158,7 +658,7 @@ li{
     font-weight: bolder;  
 }
 .item-title-category{
-    color: #add8e6;
+    color: #4682b4;
 }
 .clothing{
     width: 100%;
@@ -261,8 +761,8 @@ li{
     caret-color: transparent;
 }
 .item-size input[type="radio"]:checked + .select-size{
-    background-color: #f0c14b;
-    border-color: #a88734;
+    background-color: #87ceeb;
+    border-color: #4682b4;
     color: #111;
 }
 .clothing li label{
@@ -339,9 +839,10 @@ overflow: auto;
         justify-content: flex-start;
         grid-gap: 0;
         position: fixed;
-        top: 3%;
+        top: 0;
         right: 0;
-        width: 25%;
+        padding-top: 2%;
+        width: 20%;
         background-color: rgba(95, 115, 151, 0.15);
         backdrop-filter: blur(20px);
         color: whitesmoke;
@@ -371,6 +872,10 @@ overflow: auto;
 
 #checkout-items{
     width: 100%;
+    height: 90%;
+    margin: auto 0%;
+    overflow-y: auto;
+    padding-bottom: 2%;
 }
 .checkingout{
     list-style-type: none;
@@ -383,21 +888,30 @@ overflow: auto;
     flex-direction: column;
     border: 1px rgb(175, 172, 172) solid;
 }
-.cart-payment{
-    width: 90%;
+.cart-content-item{
+    width: 85%;
+    height: 40%;
+    margin: 1% auto 0% auto;
+    padding: 1.5% 2%;
     display: flex;
-    margin: 0% auto;
-    gap: 5%;
+    flex-direction: column;
+    border: 1px rgb(175, 172, 172) solid;
+    
+}
+.cart-payment{
+    width: 85%;
+    display: flex;
+    margin: 0% 0% 0% 5%;
+    gap: 16.5%;
 }
 .cart-payment button:last-child{
-    width: 60%;
-    flex-grow: 2;
+    width: 50%;
 }
-.cart-content p{
+.cart-content p, .cart-content-item p{
     padding: 0;
     margin: 0;
 }
-.cart-content span{
+.cart-content span, .cart-content-item span{
     padding: 0;
     margin: 0;
 }
@@ -405,11 +919,17 @@ overflow: auto;
     width: 80%;
     margin: 0% auto;
 }
-.cart-content h2{
+.cart-content-item img{
+    width: 10em;
+    height: 10em;
+    
+    margin: 0% auto;
+}
+.cart-content h2, .cart-content-item h2{
     padding: 0;
     margin: 0;
 }
-.cart-content div{
+.cart-content div, .cart-content-item div{
     width: 100%;
     margin: 0;
 }
@@ -453,7 +973,7 @@ top: 0;
 left: 0;
 }*/
 .owl-carousel-container, .owl-carousel-container-shoes{
-    max-width: 1300px;
+    max-width: 100%;
     width: 100%;
     position: relative;
 }
@@ -464,7 +984,6 @@ left: 0;
 }
 
 .carousel-button{
-  background-color: #add8e6;
   border: none;
   color: white;
   padding: 0.5em;
@@ -473,23 +992,23 @@ left: 0;
   top: 50%;
  /* transform: translateY(-50%);*/
   z-index: 1;
-  
+  background-color: transparent;
   
 }
 .carousel-button i{
-    font-size: 2em;
+    font-size: 2.5em;
 }
 .left, .left-shoes{
     left: -0.2%;
     width: 2.5em;
     height: 3em;
-    border-radius:0% 50% 50% 0%;
+    color: #87ceeb;
 }
 .right, .right-shoes{
     right: -0.2%;
     width: 2.5em;
     height: 3em;
-    border-radius:50% 0% 0% 50%;
+    color: #87ceeb;
 }
 .left:hover, .right:hover, .left-shoes:hover, .right-shoes:hover{
     color: #4682b4;
@@ -563,3 +1082,152 @@ left: 0;
 .dot.active{
      background-color: #312c2c;
 }*/
+.main-panel-lower{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+.lower-panel-title{
+    width: 100%;
+}
+.item-title-category-lower{
+    margin: 2% 0% 2% 2%;
+    color: #4682b4;
+}
+.lower-panel-content{
+    width: 100%;
+    min-width: 60%;
+    min-height: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+
+}
+.item-panel-lower{
+    width: 25%;
+    height: 70%;
+    min-width: 20%;
+    max-width: 23%;
+    min-height: 30%;
+    max-height: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.item-panel-lower div {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    
+}
+.item-panel-lower div h4{
+    width: fit-content;
+    margin: 5% 0% 5% 7%;
+    font-size: 1.2em;
+}
+.item-panel-lower div:nth-child(2){
+    justify-content: center;
+    gap: 6%;
+    width: 100%;
+    height: auto;
+}
+.item-panel-lower div:last-child{
+    width: fit-content;
+    margin: 5% 0% 5% 6%;
+    display: flex;
+    align-self: flex-start;
+}
+.item-panel-lower div a{
+    text-decoration: none;
+    font-size: 0.8em;
+}
+.item-panel-lower div button{
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+    border: none;
+    background-color: transparent;
+}
+.item-panel-lower div button img{
+    width: 100%;
+    height: 100%;
+}
+.item-panel-lower div button:nth-child(3),
+.item-panel-lower div button:nth-child(4){
+   margin: 6% 0% 5% 0%;
+}
+
+
+
+footer{
+    width: 100%;
+    background-color: #4682b4;
+    margin: 2% 0% 0% 0%;
+}
+footer div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+footer div button{
+    width: 100%;
+    height: 15%;
+    border: none;
+    background-color: #1e90ff;
+    padding: 1% 0%;
+    font-size: 1em;
+}
+.contact-div{
+    display: flex;
+    flex-direction: row;
+    margin: 5% auto;
+    justify-content:center;
+    align-content: center;
+    gap: 2%;
+}
+.contact-div div{
+    width: 25%;
+}
+.contact-div img{
+    width:40%;
+    margin: 0% auto;
+}
+.contact-div-contents{
+    display: flex;
+    align-self: center;
+}
+.contact-div-contents a{
+    text-decoration: none;
+    font-size: 0.8em;
+}
+.alright-reserve{
+    width: 100%;
+    font-size: 0.6em;
+    padding: 1% 0%;
+    border-top: 1px #87ceeb solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+}
+.alright-reserve p{
+    width: 30%;
+    text-align: right;
+}
+.alright-reserve a{
+    width: 2%;
+    height: 2%;
+}
+.alright-reserve a img{
+    width: 100%;
+}
